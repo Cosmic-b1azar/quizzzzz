@@ -49,7 +49,7 @@ struct ContentView: View {
                 VStack {
                     Button {
                         isCorrect = false
-                        isAlertShown = true
+                        alert()
                     } label: {
                         Text(questions[currentQuestion % questions.count].option1)
                             .font(.largeTitle)
@@ -60,7 +60,7 @@ struct ContentView: View {
                     }
                     Button {
                         isCorrect = true
-                        isAlertShown = true
+                        alert()
                         correctAnswers += 1
                         if correctAnswers == questions.count {
                             correctscore = true
@@ -77,7 +77,7 @@ struct ContentView: View {
                 VStack {
                     Button {
                         isCorrect = false
-                        isAlertShown = true
+                        alert()
                     } label: {
                         Text(questions[currentQuestion % questions.count].option3)
                             .font(.largeTitle)
@@ -88,7 +88,7 @@ struct ContentView: View {
                     }
                     Button {
                         isCorrect = false
-                        isAlertShown = true
+                        alert()
                     } label: {
                         Text(questions[currentQuestion % questions.count].option4)
                             .font(.largeTitle)
@@ -117,7 +117,11 @@ struct ContentView: View {
         }
 
         }
+    func alert() {
+        isAlertShown = true
     }
+}
+
     
 
 
